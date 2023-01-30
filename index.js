@@ -12,7 +12,7 @@ dotenv.config({ path: "./configs/.env" });
 //connect DB
 connectDB();
 //cors setup
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: process.env.CLIENT_ORIGIN, credentials: true }));
 //cookie-parser
 app.use(cookieParser());
 //body-parser
@@ -33,7 +33,7 @@ const PORT = process.env.PORT || 4001;
 
 //entry point
 app.get("/", (req, res) => {
-    return res.send("<h1>Server Is Running</h1>");
+    return res.send("Server Is Running");
 });
 
 //api router
