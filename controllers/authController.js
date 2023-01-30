@@ -46,7 +46,10 @@ exports.loginController = async (req, res) => {
         const accessToken = generateAccessToken(verifyEmail._id);
         //generate cookie
         const refreshToken = generateRefreshToken(verifyEmail._id);
-
+ res.header({
+      "Access-Control-Allow-Credentials": true,
+      "Access-Control-Allow-Headers": "*",
+    });
         res.cookie("logincookie", refreshToken, {
             expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
             httpOnly: true,
