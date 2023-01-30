@@ -51,7 +51,7 @@ exports.loginController = async (req, res) => {
             expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
             httpOnly: true,
             secure: true,
-            samesite: "lax",
+            sameSite: "none",
         });
         res.send(
             success(200, "login successfully", {
