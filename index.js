@@ -12,7 +12,7 @@ dotenv.config({ path: "./configs/.env" });
 //connect DB
 connectDB();
 //cors setup
-app.use(cors({ origin: process.env.CLIENT_ORIGIN, credentials: true }));
+app.use(cors({ origin: "https://instagram-clone-dinesh.vercel.app", credentials: true }));
 //cookie-parser
 app.use(cookieParser());
 //body-parser
