@@ -18,7 +18,7 @@ app.use(cookieParser());
 //body-parser
 app.use(
     express.json({
-        limit: "150mb",
+        limit: "15mb",
     })
 );
 
